@@ -192,6 +192,9 @@ namespace Plugin.FirebasePushNotifications.Platforms
             this.logger.LogDebug("RegisteredForRemoteNotifications");
 
             Firebase.CloudMessaging.Messaging.SharedInstance.ApnsToken = deviceToken;
+
+            //--- HACK: AGGIUNTO PER FORZATURA RICAZIONE TOKEN DA FIREBASE POICHE NON VIENE CHIAMATO IL DELEGATE
+            this.DidReceiveRegistrationToken(Firebase.CloudMessaging.Messaging.SharedInstance, this.Token);
         }
 
         /// <inheritdoc />

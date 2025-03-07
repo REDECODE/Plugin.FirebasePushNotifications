@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0;net7.0-android;net7.0-ios;net8.0;net8.0-android;net8.0-ios</TargetFrameworks>
+		<TargetFrameworks>net8.0;net8.0-ios;net8.0-android</TargetFrameworks>
 		<OutputType>Library</OutputType>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
@@ -56,10 +56,6 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="[7.0.0,)" />
 	</ItemGroup>
 	
-	<ItemGroup Condition="$(TargetFramework.Contains('net8.0'))">
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="[8.0.0,)" />
-	</ItemGroup>
-	
 	<!--Platform-specific package references--> 
 	<ItemGroup Condition="$(TargetFramework.Contains('-android'))">
 		<PackageReference Include="Xamarin.Firebase.Messaging">
@@ -76,7 +72,8 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(TargetFramework.Contains('-ios'))">
-		<PackageReference Include="Xamarin.Firebase.iOS.CloudMessaging" Version="8.10.0.3" />
+    <!--<PackageReference Include="Xamarin.Firebase.iOS.CloudMessaging" Version="8.10.0.3" />-->
+    <PackageReference Include="AdamE.Firebase.iOS.CloudMessaging" Version="10.23.0" />
 	</ItemGroup>
 
 </Project>

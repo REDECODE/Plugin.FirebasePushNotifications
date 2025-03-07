@@ -36,10 +36,10 @@ namespace Plugin.FirebasePushNotifications.Platforms.Channels
 
         public void CreateChannels(NotificationChannelRequest[] notificationChannelRequests)
         {
-            FirebasePushNotificationAndroidOptions.EnsureNotificationChannelRequests(
-                    notificationChannelRequests,
-                    $"{nameof(CreateChannels)}",
-                    nameof(notificationChannelRequests));
+            //FirebasePushNotificationAndroidOptions.EnsureNotificationChannelRequests(
+            //        notificationChannelRequests,
+            //        $"{nameof(CreateChannels)}",
+            //        nameof(notificationChannelRequests));
 
             this.CreateChannelsInternal(notificationChannelRequests);
         }
